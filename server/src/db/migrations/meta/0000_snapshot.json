@@ -1,0 +1,33 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.links": {
+      "name": "links",
+      "schema": "",
+      "columns": {
+        "id": { "name": "id", "type": "text", "primaryKey": true, "notNull": true },
+        "original_url": { "name": "original_url", "type": "text", "notNull": true },
+        "short_url": { "name": "short_url", "type": "varchar(100)", "notNull": true },
+        "access_count": { "name": "access_count", "type": "integer", "notNull": true, "default": 0 },
+        "created_at": { "name": "created_at", "type": "timestamp", "notNull": true, "default": "now()" }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "links_short_url_unique": {
+          "name": "links_short_url_unique",
+          "nullsNotDistinct": false,
+          "columns": ["short_url"]
+        }
+      }
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": { "columns": {}, "schemas": {}, "tables": {} }
+}
