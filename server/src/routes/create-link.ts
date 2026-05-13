@@ -2,8 +2,8 @@ import { eq } from 'drizzle-orm'
 import type { FastifyInstance } from 'fastify'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
-import { db } from '../db/connection'
-import { links } from '../db/schema'
+import { db } from '../db/connection.js'
+import { links } from '../db/schema.js'
 
 export async function createLinkRoute(app: FastifyInstance) {
   app.post('/links', async (request, reply) => {

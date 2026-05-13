@@ -1,7 +1,7 @@
 import { asc } from 'drizzle-orm'
 import type { FastifyInstance } from 'fastify'
-import { db } from '../db/connection'
-import { links } from '../db/schema'
+import { db } from '../db/connection.js'
+import { links } from '../db/schema.js'
 
 export async function listLinksRoute(app: FastifyInstance) {
   app.get('/links', async (_request, reply) => {

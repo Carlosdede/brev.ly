@@ -2,8 +2,8 @@ import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import { asc } from 'drizzle-orm'
 import type { FastifyInstance } from 'fastify'
 import { randomUUID } from 'node:crypto'
-import { db } from '../db/connection'
-import { links } from '../db/schema'
+import { db } from '../db/connection.js'
+import { links } from '../db/schema.js'
 
 function buildCsv(rows: typeof links.$inferSelect[]): string {
   const header = 'URL Original,URL Encurtada,Acessos,Data de Criação\n'

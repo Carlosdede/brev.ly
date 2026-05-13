@@ -1,8 +1,8 @@
 import { eq } from 'drizzle-orm'
 import type { FastifyInstance } from 'fastify'
 import { z } from 'zod'
-import { db } from '../db/connection'
-import { links } from '../db/schema'
+import { db } from '../db/connection.js'
+import { links } from '../db/schema.js'
 
 export async function deleteLinkRoute(app: FastifyInstance) {
   app.delete('/links/:id', async (request, reply) => {

@@ -2,13 +2,13 @@ import 'dotenv/config'
 
 import cors from '@fastify/cors'
 import Fastify from 'fastify'
-import { createLinkRoute } from './routes/create-link'
-import { deleteLinkRoute } from './routes/delete-link'
-import { exportCsvRoute } from './routes/export-csv'
-import { getOriginalUrlRoute } from './routes/get-original-url'
-import { incrementAccessRoute } from './routes/increment-access'
-import { listLinksRoute } from './routes/list-links'
 
+import { createLinkRoute } from './routes/create-link.js'
+import { deleteLinkRoute } from './routes/delete-link.js'
+import { exportCsvRoute } from './routes/export-csv.js'
+import { getOriginalUrlRoute } from './routes/get-original-url.js'
+import { incrementAccessRoute } from './routes/increment-access.js'
+import { listLinksRoute } from './routes/list-links.js'
 const app = Fastify({ logger: true })
 
 await app.register(cors, {
